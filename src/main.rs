@@ -8,9 +8,7 @@ fn guess_num() -> u64
     println!("Please input your guess.");
     let mut guess = String::new();
 
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
+    io::stdin().read_line(&mut guess).expect("Failed to read line");
 
     let guess: u64 = match guess.trim().parse() {
         Ok(num) => num,
@@ -33,8 +31,8 @@ fn main()
     let secret_number = rand::thread_rng().gen_range(1..=100);
     loop {
         let guess = guess_num();
-        println!("You guessed: {}", guess);
         let message = comparing_number( secret_number, guess );
+        println!("You guessed: {}", guess);
         println!( "{}", message );
         if guess == secret_number {
             break;
