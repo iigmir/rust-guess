@@ -12,7 +12,10 @@ fn guess_num() -> u64
         .read_line(&mut guess)
         .expect("Failed to read line");
 
-    let guess: u64 = guess.trim().parse().expect("Please type a number!");
+    let guess: u64 = match guess.trim().parse() {
+        Ok(num) => num,
+        Err(_) => 0,
+    };
     return guess
 }
 
