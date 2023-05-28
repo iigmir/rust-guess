@@ -7,11 +7,12 @@ fn guess_num() -> String
     println!("Guess the number!");
     println!("Please input your guess.");
     let mut guess = String::new();
+    
     io::stdin()
         .read_line(&mut guess)
         .expect("Failed to read line");
 
-    guess.trim().to_string()
+    return guess.trim().to_string()
 }
 
 fn main()
