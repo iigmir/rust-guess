@@ -1,3 +1,5 @@
+use rand::Rng;
+use std::cmp::Ordering;
 use std::io;
 
 fn main()
@@ -7,7 +9,8 @@ fn main()
     println!("Please input your guess.");
 
     let mut guess = String::new(); // mutable
-    let apples = 5; // immutable
+    // let apples = 5; // immutable
+    let secret_number = rand::thread_rng().gen_range(1..=100);
 
     io::stdin()
         .read_line(&mut guess)
