@@ -2,7 +2,7 @@ use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
 
-fn guess_num() -> u32
+fn guess_num() -> u64
 {
     println!("Guess the number!");
     println!("Please input your guess.");
@@ -12,7 +12,7 @@ fn guess_num() -> u32
         .read_line(&mut guess)
         .expect("Failed to read line");
 
-    let guess: u32 = guess.trim().parse().expect("Please type a number!");
+    let guess: u64 = guess.trim().parse().expect("Please type a number!");
     return guess
 }
 
