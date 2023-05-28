@@ -14,15 +14,13 @@ fn guess_num() -> u64
 
     let guess: u64 = match guess.trim().parse() {
         Ok(num) => num,
-        Err(_) => 0,
+        Err(_) => -1,
     };
     return guess
 }
 
 fn main()
 {
-    // let mut guess = String::new(); // mutable
-    // let apples = 5; // immutable
     let secret_number = rand::thread_rng().gen_range(1..=100);
     loop {
         let guess = guess_num();
